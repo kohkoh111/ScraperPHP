@@ -1,6 +1,7 @@
 <?php
      
      $weather = "";
+     $error = "";
 
 
        if($_GET['city']){
@@ -14,6 +15,7 @@
           $error = "The city you entered was not found";
 
         } else {
+
 
         $forecastPage = file_get_contents("https://ja.weather-forecast.com/locations/".$city."/forecasts/latest");
         $pageArray = explode('</div><p class="b-forecast__table-description-content"><span class="phrase">', $forecastPage);
